@@ -17,7 +17,7 @@ import java.nio.charset.Charset;
  *
  */
 public class FastJsonRedis<T> implements RedisSerializer<T> {
-    private ObjectMapper objectMapper = new ObjectMapper();
+
 
      public static final Charset  DEFAULT_CHARSET = Charset.forName("UTF-8");
 
@@ -49,7 +49,5 @@ public class FastJsonRedis<T> implements RedisSerializer<T> {
         return  JSON.parseObject(str,clazz);
     }
 
-    public void setObjectMapper(ObjectMapper objectMapper){
-         this.objectMapper=objectMapper;
-    }
+
 }

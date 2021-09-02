@@ -37,11 +37,7 @@ public class RedisConfig extends CachingConfigurerSupport {
 
           // value的序列化采用fastjson
           FastJsonRedis<Object> fastJsonRedis = new FastJsonRedis<>(Object.class);
-          //设置ObjectMapper
-          ObjectMapper mapper = new ObjectMapper();
-          mapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
-          mapper.activateDefaultTyping(LaissezFaireSubTypeValidator.instance, ObjectMapper.DefaultTyping.NON_FINAL, JsonTypeInfo.As.PROPERTY);
-          fastJsonRedis.setObjectMapper(mapper);
+
          // 设置value序列化
           template.setValueSerializer(fastJsonRedis);
           template.setHashValueSerializer(fastJsonRedis);

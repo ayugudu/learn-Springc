@@ -14,7 +14,7 @@ class SpringRedisApplicationTests {
     @Test
     void contextLoads() {
 
-        redisCache.setCacheObject("user",new User(17));
+        redisCache.setCacheObject("user1",new User(19));
     }
 
 }
